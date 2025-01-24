@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://diqiuem051ere"]
+
+[ext_resource type="Texture2D" uid="uid://bmhc780n6cuk2" path="res://icon.svg" id="1_adoc5"]
+[ext_resource type="Script" path="res://Command Pattern/Scripts/command_unit.gd" id="2_x06x2"]
+[ext_resource type="Script" path="res://Command Pattern/Scripts/command_ui.gd" id="3_pdh40"]
+
+[node name="Command Pattern Example Scene" type="Node2D"]
+
+[node name="Unit" type="Sprite2D" parent="."]
+position = Vector2(578, 316)
+texture = ExtResource("1_adoc5")
+script = ExtResource("2_x06x2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_pdh40")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "LMB: Issue a MOVE command
+[s]: Issue a SPIN command"
+
+[node name="LavelCommandQueue" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Command Queue:"
+
+[node name="CommandList" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="UndoButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "UNDO Last Command"
+
+[node name="LabelUndoQueue" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Undo Queue:"
+
+[node name="UndoList" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
