@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://17lfrms6mukt"]
+
+[ext_resource type="Script" uid="uid://nxp5rl6bxx7o" path="res://Object Pooling Pattern/Scripts/object_pooling.gd" id="1_s8h1o"]
+[ext_resource type="Texture2D" uid="uid://da14n1mmpyn4i" path="res://Object Pooling Pattern/Sprites/Nebula Blue.png" id="1_wrcq6"]
+[ext_resource type="Texture2D" uid="uid://deftypgsvoxxc" path="res://Object Pooling Pattern/Sprites/ship_0012.png" id="2_sy5xs"]
+[ext_resource type="Script" uid="uid://b40t45eo3btrf" path="res://Object Pooling Pattern/Scripts/ship.gd" id="3_7j5s5"]
+
+[node name="ObjectPooling" type="Node2D"]
+script = ExtResource("1_s8h1o")
+
+[node name="Starfield" type="Sprite2D" parent="."]
+position = Vector2(729, -129)
+texture = ExtResource("1_wrcq6")
+
+[node name="Ship" type="CharacterBody2D" parent="."]
+position = Vector2(612, 587)
+script = ExtResource("3_7j5s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ship"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_sy5xs")
+
+[node name="BulletSpawn" type="Marker2D" parent="Ship"]
+position = Vector2(0, -30)
+
+[node name="ShotDelay" type="Timer" parent="Ship"]
+wait_time = 0.01
+autostart = true
