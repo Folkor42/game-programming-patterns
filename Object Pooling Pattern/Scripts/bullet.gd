@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	position = new_pos
 	sprite_2d.rotation=rotation_angle
 	
-	if distance_moved > 1500:
+	if distance_moved > 2500:
 		#queue_free()
 		reset_bullet()
 		

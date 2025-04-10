@@ -9,10 +9,11 @@
 script = ExtResource("1_s8h1o")
 
 [node name="Starfield" type="Sprite2D" parent="."]
-position = Vector2(729, -129)
+position = Vector2(2057, 2057)
 texture = ExtResource("1_wrcq6")
 
 [node name="Ship" type="CharacterBody2D" parent="."]
+z_index = 1
 position = Vector2(612, 587)
 script = ExtResource("3_7j5s5")
 
@@ -21,8 +22,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_sy5xs")
 
 [node name="BulletSpawn" type="Marker2D" parent="Ship"]
-position = Vector2(0, -30)
+position = Vector2(0, -7)
 
 [node name="ShotDelay" type="Timer" parent="Ship"]
-wait_time = 0.01
+wait_time = 0.05
 autostart = true

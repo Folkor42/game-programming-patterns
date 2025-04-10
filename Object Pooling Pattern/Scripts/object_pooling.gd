@@ -6,7 +6,7 @@ const BULLET = preload("res://Object Pooling Pattern/bullet.tscn")
 @onready var shot_delay: Timer = $Ship/ShotDelay
 
 var is_firing : bool = false
-var bullet_count : int = 60
+var bullet_count : int = 30
 var max_bullet_count : int = 30000
 var bullet_spread_angle : float = 5.0
 var bullet_pool : Array [ Bullet ]
